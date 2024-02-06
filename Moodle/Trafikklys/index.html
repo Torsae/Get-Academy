@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Lights</title>
+    <style>
+        .off {
+            opacity: 10%;
+        }
+
+        /* Lowers opacity for inactive lights */
+
+        #black {
+            background-color: black;
+            width: 110px;
+            height: 315px;
+            padding-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        .circle {
+            height: 100px;
+            width: 100px;
+            margin-left: 5px;
+            margin-bottom: 5px;
+            border-radius: 1px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+        }
+
+        #button {
+            margin-top: 2.5px;
+            margin-bottom: 2.5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>TRAFFIC LIGHTS</h2>
+    <div id="black">
+        <div class="circle" id="red" style="background-color: red;"></div>
+        <div class="circle" id="yellow" style="background-color: yellow;"></div>
+        <div class="circle" id="green" style="background-color: green;"></div>
+    </div>
+    <div>
+        <div id="button">
+            <button onclick="turnOn('red'), stopTimeOuts()">Red</button>
+        </div>
+
+        <div id="button">
+            <button onclick="turnOn('red, yellow'), stopTimeOuts()">Red & Yellow</button>
+        </div>
+
+        <div id="button">
+            <button onclick="turnOn('green'), stopTimeOuts()">Green</button>
+        </div>
+
+        <div id="button"><button onclick="auto()">Sequence</button></div>
+        <div id="button"><button onclick="turnOn('reset'), stopTimeOuts()">Reset</button></div>
+    </div>
+
+    <script>
+        let redCircle = document.getElementById("red");
+        let yellowCircle = document.getElementById("yellow");
+        let greenCircle = document.getElementById("green");
+        let timeoutIDs = [];
+
+        function auto() {
+            turnOn('red');
+            stopTimeOuts();
+            timeoutIDs.push(setTimeout(turnOn, 2000, 'red, yellow'));
+            timeoutIDs.push(setTimeout(turnOn, 4000, 'green'));
+            timeoutIDs.push(setTimeout(turnOn, 6000, 'yellow'));
+            timeoutIDs.push(setInterval(auto, 8000));
+        }
+
+        function stopTimeOuts() {
+            timeoutIDs.forEach(function (timeoutID) {
+                clearTimeout(timeoutID);
+            })
+            timeoutIDs = [];
+        }
+
+        function turnOn(color) {
+            if (color.includes('red')) {
+                redCircle.classList.remove('off'); console.log("Red");
+            } else {
+                redCircle.classList.add('off');
+            }
+
+            if (color.includes('yellow')) {
+                yellowCircle.classList.remove('off'); console.log("Yellow");
+            } else {
+                yellowCircle.classList.add('off');
+            }
+
+            if (color.includes('green')) {
+                greenCircle.classList.remove('off'); console.log("Green");
+            } else {
+                greenCircle.classList.add('off');
+            }
+
+            if (color.includes('reset')) {
+                redCircle.classList.remove('off'); console.log("Reset");
+                yellowCircle.classList.remove('off');
+                greenCircle.classList.remove('off');
+            }
+        }
+    </script>
+</body>
+</html>

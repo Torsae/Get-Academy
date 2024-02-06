@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduksjon</title>
+</head>
+<body id="body" style="background-color:white;">
+    <h1>Introduksjon av meg.</h1>
+    <img src="Me.jpg" style="width:200px;height:200px;">
+    <div>Hei, jeg heter Torbjørn, mine hobbyer er bla:</div>
+    </br>
+    <li>Gaming</li>
+    <li>Programmering</li>
+    </br>
+
+    <button onclick="changeColor()">Change Color</button>
+
+    <script>
+        function changeColor()
+        {
+            if(document.getElementById("body").style.backgroundColor==="white")
+            {document.getElementById("body").style.backgroundColor="lightblue";}
+            else{document.getElementById("body").style.backgroundColor="white";}
+        }
+    </script>
+</body>
+</html>

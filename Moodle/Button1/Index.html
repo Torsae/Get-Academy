@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eksempel 1</title>  
+</head>
+
+<body>
+    <button onclick="UpdtDispNum()"></button>
+    <div id="DispNumDiv"> 0 </div>
+
+    <script>
+        let show = 0;
+        let DispNum = document.getElementById("DispNumDiv");
+        function UpdtDispNum(){
+            if(show === 0)
+            {
+                DispNum.innerHTML = "1";
+                show = 1;
+                console.log ("show 1")
+            } 
+            else
+            {
+                DispNum.innerHTML = "0";
+                show = 0;
+                console.log ("show 0")
+            } 
+
+        }
+    </script>
+</body>
+
+</html>
