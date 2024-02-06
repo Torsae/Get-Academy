@@ -68,7 +68,7 @@
 
         function auto() {                                               /* Automatically cycle through 'sequence' in desired order and timing */
             stopTimeOuts();                                             /* Stop any currently playing timeOuts */
-            turnOn('red');                                              /* Call function turnOn, turn on red */
+            turnOn('red');                                              /* Call function, turn on; red */
             timeoutIDs.push(setTimeout(turnOn, 2000, 'red, yellow'));   /* Delay by 2 sec, turn on; red & yellow */
             timeoutIDs.push(setTimeout(turnOn, 4000, 'green'));         /* Delay by 4 sec, turn on; green */
             timeoutIDs.push(setTimeout(turnOn, 6000, 'yellow'));        /* Delay by 6 sec, turn on; yellow */
