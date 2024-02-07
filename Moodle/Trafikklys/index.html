@@ -75,9 +75,9 @@
             timeoutIDs.push(setInterval(auto, 8000));                   /* Delay by 10 sec, Start interval (repeat function in a loop) */
         }
 
-        function stopTimeOuts() {                       /* Function to stop any and all timeOuts playing in array */
+        function stopTimeOuts() {                           /* Function to stop any and all timeOuts playing in array */
             timeoutIDs.forEach(function (timeoutID) {   
-                clearTimeout(timeoutID);                /* Clears timer for each timeOutID in array */
+                clearTimeout(timeoutID);                    /* Clears timer for each timeOutID in array */
             })
             timeoutIDs = [];
         }
