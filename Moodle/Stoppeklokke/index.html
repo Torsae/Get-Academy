@@ -6,13 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        @media (min-width:768px) and (max-width:991px) {
+            .container {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100vh;
+                border-radius: 5%;
+                background-color: rgba(0, 94, 89, 0.521);
+            }
+        }
+
+        body {
+            margin: 0;
+        }
+
         .container {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            width: 100%;
-            height: 100vh;
+            width: 700px;
+            height: 450px;
             border-radius: 5%;
             background-color: rgba(0, 94, 89, 0.521);
         }
@@ -75,18 +92,18 @@
 
         function startStopReset(buttonClicked) {
             if ((buttonClicked == 'start') && (counting == false)) {
-                timer = true;                                       console.log('Start')
+                timer = true; console.log('Start')
                 stopWatch();
                 counting = true;
             }
 
             if ((buttonClicked == 'stop') && (counting == true)) {
-                timer = false;                                      console.log('Stop')
+                timer = false; console.log('Stop')
                 counting = false;
             }
 
             if (buttonClicked == 'reset') {
-                timer = false;                                      console.log('Reset')
+                timer = false; console.log('Reset')
                 minute = 0;
                 second = 0;
                 count = 0;
@@ -103,16 +120,16 @@
 
                 if (count == 100) {
                     second++;
-                    count = 0;                                       console.log('Second')
+                    count = 0; console.log('Second')
                 }
 
                 if (second == 60) {
-                    minute++;                                        console.log('Minute')
+                    minute++; console.log('Minute')
                     second = 0;
                 }
 
                 if (minute == 60) {
-                    minute = 0;                                      console.log('Hour')
+                    minute = 0; console.log('Hour')
                     second = 0;
                 }
 
