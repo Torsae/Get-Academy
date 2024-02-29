@@ -17,7 +17,13 @@ function updateView() {
         <div class='innercontainer'>
             <div class="content Number">
                 ${firstNumber}
-                <input class="content" id="txt" type='text' value="${textInput}" onchange="greaterOrSmaller(this.value)">
+                <input
+                class="content"
+                id="txt" type='text'
+                value="${textInput}"
+                onchange="greaterOrSmaller(this.value)"
+                maxlength="1"
+                >
                 ${secondNumber}
             </div>
             <div>Points = ${points}</div>
