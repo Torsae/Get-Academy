@@ -30,11 +30,11 @@ function updateView() {
         </div>
     </div>
     <div style="opacity: 60%;">
-    Classic crocodile game;
-    </br>Answer > , = or < if
-    </br>left or right number is
-    </br>larger, smaller or equal.
-    </br>score as many points as possible.
+        Classic crocodile game;
+        </br>Answer > , = or < if
+        </br>left or right number is
+        </br>larger, smaller or equal.
+        </br>score as many points as possible.
     </div>
 `;
 }
