@@ -1,0 +1,34 @@
+.container{
+    display: flex;
+    justify-content: center;
+    background-color: lightskyblue;
+    width: 160px;
+    height: 100px;
+    border-radius: 1px;
+    border-radius: 10%;
+    padding:0;
+}
+
+.innercontainer{
+    width: 100px;
+    height: 50px;
+    margin-top: 25px;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.content{
+    text-align: center;
+}
+
+
+#txt{
+    text-align: center;
+    width: 20px;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
