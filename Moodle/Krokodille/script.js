@@ -30,10 +30,11 @@ function updateView() {
         </div>
     </div>
     <div style="opacity: 60%;">
-    Classic crocodile game;</br>
-    Answer ">" or "<" if</br>
-    left or right number is larger</br>
-    score as many points as possible.
+    Classic crocodile game;
+    </br>Answer > , = or < if
+    </br>left or right number is
+    </br>larger, smaller or equal.
+    </br>score as many points as possible.
     </div>
 `;
 }
@@ -45,17 +46,27 @@ function greaterOrSmaller(givenAnswer) {
         console.log(">")
         if (firstNumber >= secondNumber) {
             points++;
-            console.log("Correct");
-        } else { console.log("Wrong"); points = 0; }
+            console.log("Correct!");
+        } else { console.log("Wrong!"); points = 0; }
     }
 
     if (givenAnswer === "<") {
         console.log("<")
         if (firstNumber <= secondNumber) {
             points++;
-            console.log("Correct");
-        } else { console.log("Wrong"); points = 0; }
+            console.log("Correct!");
+        } else { console.log("Wrong!"); points = 0; }
     }
+
+    if (givenAnswer === "=") {
+        if (firstNumber === secondNumber) {
+            points++;
+            console.log("Correct!")
+        } else { console.log("Wrong!"); points = 0; }
+    }
+
+    if (givenAnswer !== ">" && givenAnswer !== "<" && givenAnswer !== "=") { points = 0; }
+
     reset();
 }
 
