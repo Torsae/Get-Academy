@@ -44,7 +44,7 @@ function updateView() {
 function greaterOrSmaller(givenAnswer) {
     if (givenAnswer === ">") {
         console.log(">")
-        if (firstNumber >= secondNumber) {
+        if (firstNumber > secondNumber) {
             points++;
             console.log("Correct!");
         } else { console.log("Wrong!"); points = 0; }
@@ -52,7 +52,7 @@ function greaterOrSmaller(givenAnswer) {
 
     if (givenAnswer === "<") {
         console.log("<")
-        if (firstNumber <= secondNumber) {
+        if (firstNumber < secondNumber) {
             points++;
             console.log("Correct!");
         } else { console.log("Wrong!"); points = 0; }
