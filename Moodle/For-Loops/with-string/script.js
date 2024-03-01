@@ -39,7 +39,7 @@ function printLettersInReverse(inputString) {
 function reset(amount) {
     console.log("clearText:")
     document.getElementById('txt').value = '';
-    document.getElementById('txt').focus();
+    refocusOnInput();
     if (amount == 'full') { updateView(); }
 }
 
