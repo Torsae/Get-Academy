@@ -3,6 +3,8 @@
 
 // Model
 const root = document.getElementById('root');
+let textInput = '';
+let reversedText = '';
 
 // View
 updateView();
@@ -26,13 +28,9 @@ function updateView() {
 // Controller
 
 function printLettersInReverse(inputString) {
-    let textInput = '';
-    let reversedText = '';
-
     for (let index = 0; index <= inputString.length; index++) {
         textInput = textInput + inputString.charAt(index);
     }
-
     reversedText = textInput.split("").reverse().join("");
     document.getElementById('letters').innerHTML += '<li>' + reversedText + '</li>';
     reset('half');
