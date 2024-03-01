@@ -33,6 +33,7 @@ function printLettersInReverse(inputString) {
     }
     reversedText = textInput.split("").reverse().join("");
     document.getElementById('letters').innerHTML += '<li>' + reversedText + '</li>';
+    textInput = '';
     reset('half');
 }
 
