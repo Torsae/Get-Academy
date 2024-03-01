@@ -15,7 +15,6 @@ function updateView() {
         <div>
             <input id='txt'
             type='text'
-            onfocusout="refocusOnInput()"
             onchange=printLettersInReverse(this.value)>
             <button onclick="reset('full');">Clear list</button>
         </div>
