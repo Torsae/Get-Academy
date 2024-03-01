@@ -1,6 +1,5 @@
 // Javascript
 
-
 // Model
 const root = document.getElementById('root');
 let textInput = '';
