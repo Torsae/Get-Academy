@@ -4,7 +4,6 @@
 const root = document.getElementById('root');
 let displayedNumber1 = 0;
 let displayedNumber2 = 0;
-let generatedNumber = 0;
 
 // View
 updateView();
@@ -30,13 +29,11 @@ function rerollNumbers() {
     displayedNumber2 = 1;
 
     while (displayedNumber1 !== displayedNumber2) {
-        generateRandomNumber(generatedNumber);
-        displayedNumber1 = generatedNumber;
-        console.log("Set displayedNumber1 to ", generatedNumber);
+        displayedNumber1 = generateRandomNumber();
+        console.log("Set displayedNumber1 to ", displayedNumber1);
 
-        generateRandomNumber(generatedNumber);
-        displayedNumber2 = generatedNumber;
-        console.log("Set displayedNumber2 to ", generatedNumber);
+        displayedNumber2 = generateRandomNumber();
+        console.log("Set displayedNumber2 to ", displayedNumber2);
 
         // Console log for results
         if (displayedNumber1 == displayedNumber2) {
@@ -47,9 +44,7 @@ function rerollNumbers() {
     updateView();
 }
 
-function generateRandomNumber(randomNumber) {
+function generateRandomNumber() {
     console.log("Generating Random Numbers")
-    randomNumber = Math.floor(Math.random(10) * 10);
-    generatedNumber = randomNumber;
-    return;
+    return Math.floor(Math.random() * 10);;
 }
