@@ -33,15 +33,15 @@ function rerollNumbers() {
         generateRandomNumber(generatedNumber);
         displayedNumber1 = generatedNumber;
         console.log("Set displayedNumber1 to ", generatedNumber);
-        
+
         generateRandomNumber(generatedNumber);
         displayedNumber2 = generatedNumber;
         console.log("Set displayedNumber2 to ", generatedNumber);
-        
+
         // Console log for results
-        if(displayedNumber1 == displayedNumber2){
+        if (displayedNumber1 == displayedNumber2) {
             console.log("EQUAL NUMBERS FOUND")
-        } else {console.log("NOT EQUAL")}
+        } else { console.log("NOT EQUAL") }
         console.log("")
     }
     updateView();
