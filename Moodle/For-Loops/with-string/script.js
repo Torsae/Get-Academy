@@ -17,7 +17,7 @@ function updateView() {
             onchange=printLettersInReverse(this.value)>
             <button onclick="reset('full');">Clear list</button>
         </div>
-    <div id='letters'></div>
+        <div id='letters'></div>
     </div>
     `;
     refocusOnInput();
@@ -26,10 +26,10 @@ function updateView() {
 // Controller
 
 function printLettersInReverse(inputString) {
-    for (let index = inputString.length; index >= 0; index--) {
-        textInput = textInput + inputString.charAt(index);
+    for (let index = inputString.length - 1; index >= 0; index--) {
+        textInput = textInput + inputString.charAt(index) + ' ';
     }
-    document.getElementById('letters').innerHTML += '<li>' + textInput + '</li>';
+    document.getElementById('letters').innerHTML += textInput + '</br>';
     textInput = '';
     reset();
 }
