@@ -26,11 +26,10 @@ function updateView() {
 // Controller
 
 function printLettersInReverse(inputString) {
-    for (let index = 0; index <= inputString.length; index++) {
+    for (let index = inputString.length; index >= 0; index--) {
         textInput = textInput + inputString.charAt(index);
     }
-    reversedText = textInput.split("").reverse().join("");
-    document.getElementById('letters').innerHTML += '<li>' + reversedText + '</li>';
+    document.getElementById('letters').innerHTML += '<li>' + textInput + '</li>';
     textInput = '';
     reset();
 }
