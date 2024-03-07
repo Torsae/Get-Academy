@@ -5,7 +5,6 @@
 const root = document.getElementById('root');
 let attackResult = "";
 let goblinHealth = 100;
-let unitAttacking = "";
 let totalDamage = 0;
 
 const characters = [
@@ -47,12 +46,14 @@ function updateView() {
 // Controller
 
 function playerAttack(unitAttacking) {
-    console.log(unitAttacking.name,"is trying to attack the goblin!");
+    console.log(unitAttacking.name,"tries to attack the goblin!");
     if (unitAttacking.accuracy >= goblin.accuracyRequired) {
         attackHit(unitAttacking);
         attackResult = (unitAttacking.name + "'s attack hit!");
+    } else {
+        attackResult = (unitAttacking.name + "'s attack missed!");
+        console.log(unitAttacking.name + "'s attack missed!")
     }
-    else { attackResult = (unitAttacking.name + "'s attack missed!"); }
     updateView();
 }
 
