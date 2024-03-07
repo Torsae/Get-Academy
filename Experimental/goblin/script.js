@@ -14,13 +14,13 @@ const characters = [
         accuracyRequired: 6,
         defense: { armor: 12, fireResist: 3 }
     },
-
+    
     {
         name: "Terje",
         accuracy: 8,
         attack: { damage: 20, fire: 10 },
     },
-
+    
     {
         name: "Per",
         accuracy: 4,
@@ -28,6 +28,9 @@ const characters = [
     }
 ]
 
+goblin = characters[0];
+terje = characters[1];
+per = characters[2]; 
 
 // View
 updateView();
@@ -35,26 +38,22 @@ updateView();
 function updateView() {
     root.innerHTML = /*HTML*/`
         <div>Goblin health: ${goblinHealth}</div>
-        <button onclick='attackEnemy()'>Try to attack</button>
+        <button onclick='playerAttack(terje)'>Attack with Terje</button>
+        <button onclick='playerAttack(per)'>Attack with Per</button>
         <div>${attackResult}</div>
     `;
 }
 
 // Controller
 
-function attackEnemy() {
-    goblin = characters[0];
-    terje = characters[1];
-    per = characters[2]; 
-    playerAttack(terje);
-    playerAttack(per);
-    updateView();
-}
-
 function playerAttack(unitAttacking) {
     console.log(unitAttacking.name,"is trying to attack the goblin!");
-    if (unitAttacking.accuracy >= goblin.accuracyRequired) {attackHit(unitAttacking); }
-    else { console.log(unitAttacking.name,"'s attack missed!"); }
+    if (unitAttacking.accuracy >= goblin.accuracyRequired) {
+        attackHit(unitAttacking);
+        attackResult = (unitAttacking.name + "'s attack hit!");
+    }
+    else { attackResult = (unitAttacking.name + "'s attack missed!"); }
+    updateView();
 }
 
 function attackHit(unitAttacking) {
