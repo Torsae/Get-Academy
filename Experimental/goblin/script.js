@@ -3,7 +3,6 @@
 const root = document.getElementById('root');
 let attackResult = "";
 let goblinHealth = 100;
-
 const characters = [
     {
         name: "Goblin",
@@ -30,7 +29,6 @@ per = characters[2];
 
 // View
 updateView();
-
 function updateView() {
     root.innerHTML = /*HTML*/`
         <div>Goblin health: ${goblinHealth}</div>
