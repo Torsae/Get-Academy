@@ -63,7 +63,7 @@ function attackHit(unitAttacking) {
     calculateDamage(unitAttacking);
     goblinHealth -= totalDamage;
     console.log("He did:",totalDamage,"damage to the goblin!")
-};
+}
 
 function calculateDamage(unitAttacking) {
     totalDamage = (unitAttacking.attack.damage - unit.goblin.defense.armor) + (unitAttacking.attack.fire - unit.goblin.defense.fireResist)
