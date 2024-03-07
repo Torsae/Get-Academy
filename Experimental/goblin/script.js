@@ -1,6 +1,4 @@
 // Javascript
-
-
 // Model
 const root = document.getElementById('root');
 let attackResult = "";
@@ -44,32 +42,17 @@ function updateView() {
 }
 
 // Controller
-
 function playerAttack(unitAttacking) {
-    console.log(unitAttacking.name,"tries to attack the goblin!");
     if (unitAttacking.accuracy >= goblin.accuracyRequired) {
-        attackHit(unitAttacking);
+        calculateDamage(unitAttacking);
         attackResult = (unitAttacking.name + "'s attack hit!");
     } else {
         attackResult = (unitAttacking.name + "'s attack missed!");
-        console.log(unitAttacking.name + "'s attack missed!")
     }
     updateView();
 }
 
-function attackHit(unitAttacking) {
-    console.log(unitAttacking.name,"'s attack hit!")
-    calculateDamage(unitAttacking);
-    goblinHealth -= totalDamage;
-    console.log("He did:",totalDamage,"damage to the goblin!")
-}
-
 function calculateDamage(unitAttacking) {
     totalDamage = (unitAttacking.attack.damage - goblin.defense.armor) + (unitAttacking.attack.fire - goblin.defense.fireResist)
-    console.log("Calculating damge taken:(",
-                unitAttacking.attack.damage,"-",
-                goblin.defense.armor,") + (",
-                unitAttacking.attack.fire,"-",
-                goblin.defense.fireResist,
-                ") =",totalDamage)
+    goblinHealth -= totalDamage;
 }
