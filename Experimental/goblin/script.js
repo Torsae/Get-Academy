@@ -3,7 +3,6 @@
 const root = document.getElementById('root');
 let attackResult = "";
 let goblinHealth = 100;
-let totalDamage = 0;
 
 const characters = [
     {
