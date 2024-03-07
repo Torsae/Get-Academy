@@ -35,24 +35,24 @@ updateView();
 function updateView() {
     root.innerHTML = /*HTML*/`
         <div>Goblin health: ${goblinHealth}</div>
-        <button onclick='playerAttack(terje)'>Attack with Terje</button>
-        <button onclick='playerAttack(per)'>Attack with Per</button>
+        <button onclick='tryToAttack(terje)'>Attack with Terje</button>
+        <button onclick='tryToAttack(per)'>Attack with Per</button>
         <div>${attackResult}</div>
     `;
 }
 
 // Controller
-function playerAttack(unitAttacking) {
-    if (unitAttacking.accuracy >= goblin.accuracyRequired) {
-        calculateDamage(unitAttacking);
-        attackResult = (unitAttacking.name + "'s attack hit!");
+function tryToAttack(playerAttacking) {
+    if (playerAttacking.accuracy >= goblin.accuracyRequired) {
+        calculateDamage(playerAttacking);
+        attackResult = (playerAttacking.name + "'s attack hit!");
     } else {
-        attackResult = (unitAttacking.name + "'s attack missed!");
+        attackResult = (playerAttacking.name + "'s attack missed!");
     }
     updateView();
 }
 
-function calculateDamage(unitAttacking) {
-    totalDamage = (unitAttacking.attack.damage - goblin.defense.armor) + (unitAttacking.attack.fire - goblin.defense.fireResist)
+function calculateDamage(playerAttacking) {
+    totalDamage = (playerAttacking.attack.damage - goblin.defense.armor) + (playerAttacking.attack.fire - goblin.defense.fireResist)
     goblinHealth -= totalDamage;
 }
