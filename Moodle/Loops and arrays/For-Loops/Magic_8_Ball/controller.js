@@ -15,7 +15,7 @@ function getRandomIndex() {
     console.log("Set new index:", index);
     
     while (index2 == lastPickedAnswer) {
-        index2 = Math.floor(Math.random() * magicBall[index].answers.length);
+        index2 = Math.floor(Math.random() * magicBall[index].length);
         console.log("Generating index 2");
     }
     lastPickedAnswer = index2;
@@ -25,8 +25,8 @@ function getRandomIndex() {
 }
 
 function changeDisplayedAnswer(index, index2) {
-    console.log("changeDisplayedAnswer(","index:", index, "index2:", index2,")");
-    displayedAnswer = magicBall[index].answers[index2].result;
-    console.log("Answer:", magicBall[index].answers[index2].result);
+    console.log("Fetching answer type:", index, "answer:", index2);
+    displayedAnswer = magicBall[index][index2];
+    console.log("Answer:", magicBall[index][index2])
     updateView();
 }
