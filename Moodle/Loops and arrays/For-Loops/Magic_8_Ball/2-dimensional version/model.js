@@ -1,7 +1,7 @@
 // Javascript
 // Model
 const root = document.getElementById('root');
-let displayedAnswer = 0;
+let displayedAnswer = "";
 let lastPickedIndex = -1;
 let lastPickedAnswer = -1;
 
