@@ -9,10 +9,7 @@ function getRandomIndex() {
         console.log("Generating index");
     }
     lastPickedIndex = index;
-
-    console.log("Set new index:", index);
-    
-    changeDisplayedAnswer(index, index2);
+    changeDisplayedAnswer(index);
 }
 
 function changeDisplayedAnswer(index) {
