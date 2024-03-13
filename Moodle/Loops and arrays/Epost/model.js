@@ -2,5 +2,5 @@
 
 // Model
 const root = document.getElementById('root');
-let inputEmail = "";
-let emailResult = "";
+let emailResult = "Please enter your email";
+let isValid = null;
